@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="ttk.Frame" id="frame_main">
+    <property name="borderwidth">5</property>
+    <property name="height">640</property>
+    <property name="width">900</property>
+    <layout manager="pack">
+      <property name="propagate">True</property>
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="lbl_baslik">
+        <property name="background">#00ff80</property>
+        <property name="text" translatable="yes">Temel sekilleri asagidaki tuslar ile ekleyiniz</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">20</property>
+          <property name="width">600</property>
+          <property name="x">310</property>
+          <property name="y">15</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Canvas" id="cnvs_ana">
+        <property name="background">#6e6e6e</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">300</property>
+          <property name="relx">0</property>
+          <property name="width">300</property>
+          <property name="x">460</property>
+          <property name="y">240</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_gosterDikdortgen">
+        <property name="command">gosterDikdortgen_OnClick</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Dikdörtgen</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">125</property>
+          <property name="y">50</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_gosterDaire">
+        <property name="command">gosterDaire_OnClick</property>
+        <property name="text" translatable="yes">Daire</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">205</property>
+          <property name="y">50</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_gosterUcgen">
+        <property name="command">gosterUcgen_OnClick</property>
+        <property name="text" translatable="yes">Üçgen</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">285</property>
+          <property name="y">50</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Checkbutton" id="cbtn_malzemeEklenecekMI">
+        <property name="text" translatable="yes">Malzeme Ekle</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">120</property>
+          <property name="x">70</property>
+          <property name="y">350</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta_x">
+        <property name="anchor">center</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">X</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">120</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta_y">
+        <property name="anchor">center</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">Y</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">170</property>
+          <property name="y">120</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta1">
+        <property name="text" translatable="yes">Nokta 1</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">40</property>
+          <property name="y">150</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta1_x">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">150</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta1_ara_x">
+        <property name="anchor">center</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">x</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">30</property>
+          <property name="x">135</property>
+          <property name="y">150</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta1_y">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">170</property>
+          <property name="y">150</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta2">
+        <property name="text" translatable="yes">Nokta 2</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">40</property>
+          <property name="y">190</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta2_x">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">190</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta2_ara_x">
+        <property name="anchor">center</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">x</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">30</property>
+          <property name="x">135</property>
+          <property name="y">190</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta2_y">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">170</property>
+          <property name="y">190</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta3">
+        <property name="text" translatable="yes">Nokta 3</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">40</property>
+          <property name="y">230</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta3_x">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">230</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_nokta3_ara_x">
+        <property name="anchor">center</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">x</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">30</property>
+          <property name="x">135</property>
+          <property name="y">230</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_nokta3_y">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">170</property>
+          <property name="y">230</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_yaricap1">
+        <property name="text" translatable="yes">Yarıçap 1</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">40</property>
+          <property name="y">270</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_yaricap1">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">270</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_yaricap2">
+        <property name="text" translatable="yes">Yarıçap 2</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">40</property>
+          <property name="y">310</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="entry_yaricap2">
+        <property name="justify">center</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">-</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">40</property>
+          <property name="x">100</property>
+          <property name="y">310</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_eklenen_sekil">
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">120</property>
+          <property name="x">70</property>
+          <property name="y">95</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_ekleSekil">
+        <property name="command">ekleSekil_OnClick</property>
+        <property name="text" translatable="yes">Ekle</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">245</property>
+          <property name="y">375</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_bilgilendirme">
+        <property name="background">#00ffff</property>
+        <property name="borderwidth">5</property>
+        <property name="cursor">arrow</property>
+        <property name="padding">5</property>
+        <property name="text" translatable="yes">Bilgilendirme
+
+</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">60</property>
+          <property name="width">600</property>
+          <property name="x">310</property>
+          <property name="y">430</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_sonuc">
+        <property name="background">#00ffff</property>
+        <property name="padding">5</property>
+        <property name="text" translatable="yes">Sonuçlar
+
+
+
+
+
+
+</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">135</property>
+          <property name="width">600</property>
+          <property name="x">310</property>
+          <property name="y">540</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="treeview_sekil_listesi">
+        <property name="selectmode">extended</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">400</property>
+          <property name="width">265</property>
+          <property name="x">750</property>
+          <property name="y">290</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="cbox_aci_bas">
+        <property name="state">disabled</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">250</property>
+          <property name="y">270</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_aci_bas">
+        <property name="text" translatable="yes">Açý Baþ</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">50</property>
+          <property name="x">170</property>
+          <property name="y">270</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="cbox_aci_son">
+        <property name="state">disabled</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">60</property>
+          <property name="x">250</property>
+          <property name="y">310</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbl_aci_son">
+        <property name="text" translatable="yes">Açý Son</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">50</property>
+          <property name="x">170</property>
+          <property name="y">310</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_coz">
+        <property name="command">coz_OnClick</property>
+        <property name="text" translatable="yes">Çöz</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">845</property>
+          <property name="y">510</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_silSekil">
+        <property name="command">silSekil_OnClick</property>
+        <property name="text" translatable="yes">Sil</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">655</property>
+          <property name="y">510</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Scrollbar" id="scrbar_yatay">
+        <property name="orient">horizontal</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="width">300</property>
+          <property name="x">460</property>
+          <property name="y">80</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Scrollbar" id="scrbar_dikey">
+        <property name="orient">vertical</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">300</property>
+          <property name="x">300</property>
+          <property name="y">240</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btn_gosterEksen">
+        <property name="command">gosterEksen_OnClick</property>
+        <property name="text" translatable="yes">Eksen</property>
+        <layout manager="place">
+          <property name="anchor">center</property>
+          <property name="height">25</property>
+          <property name="width">70</property>
+          <property name="x">45</property>
+          <property name="y">50</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
